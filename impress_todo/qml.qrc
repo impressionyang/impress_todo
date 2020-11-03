@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>send_panel.qml</file>
+        <file>recv_panel.qml</file>
+        <file>main_panel.qml</file>
+    </qresource>
+</RCC>
