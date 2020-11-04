@@ -39,6 +39,11 @@ Page {
               onPressAndHold: {
 //                    title.text = qsTr("<b>") + name.text + qsTr("</b>")
                     listview.currentIndex = index;
+                    model.remove(index)
+              }
+              onPositionChanged: {
+                  console.log(mouse.x + 'index=' + index)
+
               }
           }
       }
