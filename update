@@ -6,8 +6,7 @@ DATE=`date`
 
 git add .
 git commit -m "$0 : $1 $DATE"
-git push 
-
+git push origin master
 ########################################
 #    written by impressionyang         #
 ########################################
