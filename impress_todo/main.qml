@@ -7,7 +7,7 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Stack")
+    title: qsTr("impress todo")
 
     header: ToolBar {
         contentHeight: toolButton.implicitHeight
@@ -47,16 +47,16 @@ ApplicationWindow {
             ItemDelegate {
                 Text {
                     anchors.fill: parent
-                    text: qsTr("recv")
+                    text: qsTr("分类")
                     color: "white"
-                    font.pixelSize: 30
+                    font.pixelSize: 25
                     verticalAlignment: Text.AlignVCenter
                     anchors.leftMargin: 10
                 }
 
                 width: parent.width
                 onClicked: {
-                    stackView.push("recv_panel.qml")
+                    stackView.push("classes_page.qml")
                     drawer.close()
                 }
             }
@@ -64,16 +64,34 @@ ApplicationWindow {
 
                 Text {
                     anchors.fill: parent
-                    text: qsTr("send")
+                    text: qsTr("已完成")
                     color: "white"
-                    font.pixelSize: 30
+                    font.pixelSize: 25
                     verticalAlignment: Text.AlignVCenter
                     anchors.leftMargin: 10
                 }
 
                 width: parent.width
                 onClicked: {
-                    stackView.push("send_panel.qml")
+                    stackView.push("finished_page.qml")
+                    drawer.close()
+                }
+            }
+
+            ItemDelegate {
+
+                Text {
+                    anchors.fill: parent
+                    text: qsTr("设置")
+                    color: "white"
+                    font.pixelSize: 25
+                    verticalAlignment: Text.AlignVCenter
+                    anchors.leftMargin: 10
+                }
+
+                width: parent.width
+                onClicked: {
+                    stackView.push("setting_page.qml")
                     drawer.close()
                 }
             }
@@ -82,7 +100,7 @@ ApplicationWindow {
 
     StackView {
         id: stackView
-        initialItem: "main_panel.qml"
+        initialItem: "main_page.qml"
         anchors.fill: parent
     }
 }

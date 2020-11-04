@@ -3,17 +3,49 @@ import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.12
 
 Page {
-//    width: 600
-//    height: 400
 
-    title: qsTr("Home")
+    title: qsTr("已完成")
+
+    Rectangle {
+        id: cb_frame
+        width: parent.width
+        height: 50
+        z: 1
+
+        Text {
+            id: cb_frame_text
+            height: parent.height
+            width: 60
+            anchors.leftMargin: 10
+            text: qsTr("类别:")
+            font.pixelSize: 20
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+
+        }
+
+        ComboBox {
+            id: cb
+            width: parent.width - cb_frame_text.width
+            height: parent.height
+            anchors.left: cb_frame_text.right
+            anchors.rightMargin: 10
+            anchors.leftMargin: 10
+            model: ["class1", "class2", "class3"]
+
+        }
+    }
+
+
 
     ListView{
         id: listview
-        anchors.fill: parent
+        width: parent.width
+        anchors.top: cb_frame.bottom
+        height: parent.height - cb_frame.height
         model: model
         delegate:  contactDelegate
-        highlight: Rectangle { color: "lightsteelblue"; radius: 1 }
+        highlight: Rectangle { color: "lightsteelblue"; radius: 10 }
 //        focus: true
         flickableDirection: Flickable.VerticalFlick
         spacing: 1
@@ -70,7 +102,4 @@ Page {
           type: 0
         }
     }
-
 }
-
-

@@ -5,7 +5,7 @@ echo start update!
 DATE=`date`
 
 git add .
-git commit -m "$0:$1_$DATE"
+git commit -m "$0 : $1 $DATE"
 git push origin master
 
 ########################################
