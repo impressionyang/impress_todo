@@ -43,7 +43,6 @@ Page {
               }
               onPositionChanged: {
                   console.log(mouse.x + 'index=' + index)
-
               }
           }
       }
